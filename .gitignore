@@ -1,0 +1,7 @@
+node_modules/
+.claude/
+*.xlsx
+server.js
+server.py
+scripts/
+__pycache__/

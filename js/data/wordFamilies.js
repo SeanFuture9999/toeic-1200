@@ -1,0 +1,222 @@
+export const wordFamilies = [
+  {
+    "id": 1,
+    "root": "assess",
+    "verb": "assess",
+    "nounThing": "assessment",
+    "nounPerson": "assessor",
+    "adjective": null,
+    "adverbOrNeg": "reassess",
+    "part5Hint": "The ___ revealed risks.",
+    "listeningDiff": "重音在第2音節"
+  },
+  {
+    "id": 2,
+    "root": "comply",
+    "verb": "comply",
+    "nounThing": "compliance",
+    "nounPerson": null,
+    "adjective": "compliant",
+    "adverbOrNeg": "non-compliance",
+    "part5Hint": "Ensure ___with rules.",
+    "listeningDiff": "comply/compliant尾音不同"
+  },
+  {
+    "id": 3,
+    "root": "manage",
+    "verb": "manage",
+    "nounThing": "management",
+    "nounPerson": "manager",
+    "adjective": "managerial",
+    "adverbOrNeg": "manageable",
+    "part5Hint": "The ___ approved it.",
+    "listeningDiff": "manage→管理 3音節"
+  },
+  {
+    "id": 4,
+    "root": "produce",
+    "verb": "produce",
+    "nounThing": "production/product",
+    "nounPerson": "producer",
+    "adjective": "productive",
+    "adverbOrNeg": "productivity",
+    "part5Hint": "Increase ___ by 20%.",
+    "listeningDiff": "名動重音不同！"
+  },
+  {
+    "id": 5,
+    "root": "perform",
+    "verb": "perform",
+    "nounThing": "performance",
+    "nounPerson": "performer",
+    "adjective": null,
+    "adverbOrNeg": "outperform",
+    "part5Hint": "Annual ___ review.",
+    "listeningDiff": "重音在第2音節"
+  },
+  {
+    "id": 6,
+    "root": "invest",
+    "verb": "invest",
+    "nounThing": "investment",
+    "nounPerson": "investor",
+    "adjective": null,
+    "adverbOrNeg": "reinvest",
+    "part5Hint": "Return on ___.",
+    "listeningDiff": "invest→3音節衍生"
+  },
+  {
+    "id": 7,
+    "root": "communicate",
+    "verb": "communicate",
+    "nounThing": "communication",
+    "nounPerson": "communicator",
+    "adjective": "communicative",
+    "adverbOrNeg": null,
+    "part5Hint": "Effective ___ is key.",
+    "listeningDiff": "5音節→注意重音"
+  },
+  {
+    "id": 8,
+    "root": "negotiate",
+    "verb": "negotiate",
+    "nounThing": "negotiation",
+    "nounPerson": "negotiator",
+    "adjective": "negotiable",
+    "adverbOrNeg": null,
+    "part5Hint": "The ___ lasted hours.",
+    "listeningDiff": "negotiate /ni-ɡoʊ-ʃi-eɪt/"
+  },
+  {
+    "id": 9,
+    "root": "compete",
+    "verb": "compete",
+    "nounThing": "competition",
+    "nounPerson": "competitor",
+    "adjective": "competitive",
+    "adverbOrNeg": "competitively",
+    "part5Hint": "A ___ market.",
+    "listeningDiff": "competitive重音在第2"
+  },
+  {
+    "id": 10,
+    "root": "employ",
+    "verb": "employ",
+    "nounThing": "employment",
+    "nounPerson": "employer/employee",
+    "adjective": null,
+    "adverbOrNeg": "unemployment",
+    "part5Hint": "The ___ rate fell.",
+    "listeningDiff": "employer vs employee!"
+  },
+  {
+    "id": 11,
+    "root": "require",
+    "verb": "require",
+    "nounThing": "requirement",
+    "nounPerson": null,
+    "adjective": "required",
+    "adverbOrNeg": "prerequisite",
+    "part5Hint": "Meet the ___s.",
+    "listeningDiff": "require→2音節"
+  },
+  {
+    "id": 12,
+    "root": "regulate",
+    "verb": "regulate",
+    "nounThing": "regulation",
+    "nounPerson": "regulator",
+    "adjective": "regulatory",
+    "adverbOrNeg": "deregulate",
+    "part5Hint": "___ agencies monitor.",
+    "listeningDiff": "regulatory重音在第1"
+  },
+  {
+    "id": 13,
+    "root": "authorize",
+    "verb": "authorize",
+    "nounThing": "authorization",
+    "nounPerson": "authority",
+    "adjective": "authorized",
+    "adverbOrNeg": "unauthorized",
+    "part5Hint": "___ personnel only.",
+    "listeningDiff": "authorize→3音節"
+  },
+  {
+    "id": 14,
+    "root": "finance",
+    "verb": "finance",
+    "nounThing": "financing",
+    "nounPerson": "financier",
+    "adjective": "financial",
+    "adverbOrNeg": "financially",
+    "part5Hint": "___ statements show.",
+    "listeningDiff": "finance名/動重音同"
+  },
+  {
+    "id": 15,
+    "root": "resolve",
+    "verb": "resolve",
+    "nounThing": "resolution",
+    "nounPerson": null,
+    "adjective": "resolute",
+    "adverbOrNeg": "irresolvable",
+    "part5Hint": "Pass a ___.",
+    "listeningDiff": "resolution→4音節"
+  },
+  {
+    "id": 16,
+    "root": "conclude",
+    "verb": "conclude",
+    "nounThing": "conclusion",
+    "nounPerson": null,
+    "adjective": "conclusive",
+    "adverbOrNeg": "inconclusive",
+    "part5Hint": "In ___, we agree.",
+    "listeningDiff": "conclusive /kənˈkluːsɪv/"
+  },
+  {
+    "id": 17,
+    "root": "determine",
+    "verb": "determine",
+    "nounThing": "determination",
+    "nounPerson": null,
+    "adjective": "determined",
+    "adverbOrNeg": "predetermined",
+    "part5Hint": "A ___ person wins.",
+    "listeningDiff": "determined→3音節"
+  },
+  {
+    "id": 18,
+    "root": "sustain",
+    "verb": "sustain",
+    "nounThing": "sustainability",
+    "nounPerson": null,
+    "adjective": "sustainable",
+    "adverbOrNeg": "unsustainable",
+    "part5Hint": "___ development.",
+    "listeningDiff": "sustainable→4音節"
+  },
+  {
+    "id": 19,
+    "root": "maintain",
+    "verb": "maintain",
+    "nounThing": "maintenance",
+    "nounPerson": null,
+    "adjective": null,
+    "adverbOrNeg": "well-maintained",
+    "part5Hint": "Schedule ___ today.",
+    "listeningDiff": "maintenance重音在第1"
+  },
+  {
+    "id": 20,
+    "root": "participate",
+    "verb": "participate",
+    "nounThing": "participation",
+    "nounPerson": "participant",
+    "adjective": null,
+    "adverbOrNeg": null,
+    "part5Hint": "Active ___ is key.",
+    "listeningDiff": "participate→4音節"
+  }
+];
