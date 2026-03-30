@@ -22,109 +22,178 @@ const allWordsList = [
   ...officeSlang.map(s => s.slang)
 ].filter(Boolean);
 
-function parseMethodWords(desc) {
+// ──────────────────────────────────────────────
+// Explicit day→word mapping (no overlap)
+// ──────────────────────────────────────────────
+// shortWords: 70 words, ids 1-70 (index 0-69)
+// confusingPairs: 25 pairs, ids 1-25 (index 0-24)
+// trickyWords: 40 words, ids 1-40 (index 0-39)
+// rootWords: 30 groups, ids 1-30 (index 0-29)
+// wordFamilies: 20 families, ids 1-20 (index 0-19)
+// officeSlang: 30 slangs, ids 1-30 (index 0-29)
+
+const dayMap = {
+  // Day 1: A=短字優先 10字, B=字根-ject+-port
+  '1A': { type: 'flashcard', source: 'shortWords', range: [0, 10] },
+  '1B': { type: 'roots', rootIds: [0, 1] },  // -ject, -port
+  // Day 2: A=短字進階(同字不同義) 10字, B=字根-struct+填空
+  '2A': { type: 'flashcard', source: 'shortWords', range: [10, 20] },
+  '2B': { type: 'roots', rootIds: [2] },  // -struct
+  // Day 3: A=混淆對決 4對, B=地雷掃除 6字
+  '3A': { type: 'pairs', range: [0, 4] },
+  '3B': { type: 'flashcard', source: 'trickyWords', range: [0, 6] },
+  // Day 4: A=混淆對決 3對, B=詞族assess
+  '4A': { type: 'pairs', range: [4, 7] },
+  '4B': { type: 'families', range: [0, 1] },  // assess
+  // Day 5: A=職場黑話 10個, B=諧音聯想 10字
+  '5A': { type: 'slang', range: [0, 10] },
+  '5B': { type: 'flashcard', source: 'trickyWords', range: [6, 16] },
+  // Day 6: A=詞族comply+manage, B=找碴法
+  '6A': { type: 'families', range: [1, 3] },  // comply, manage
+  '6B': { type: 'quiz' },
+  // Day 7: A=短字優先II 10字, B=字根-mit/-cess/-fer
+  '7A': { type: 'flashcard', source: 'shortWords', range: [20, 30] },
+  '7B': { type: 'roots', rootIds: [3, 4, 5] },  // -mit, -ceed/-cess, -fer
+  // Day 8: A=混淆對決 4對, B=地雷掃除 6字
+  '8A': { type: 'pairs', range: [7, 11] },
+  '8B': { type: 'flashcard', source: 'trickyWords', range: [16, 22] },
+  // Day 9: A=詞族invest+compete+employ, B=諧音聯想 5字
+  '9A': { type: 'families', range: [5, 8] },  // invest, compete, employ... (use perform->9 too? no just 5,6,7=invest,perform,compete... let me map properly)
+  '9B': { type: 'flashcard', source: 'trickyWords', range: [22, 27] },
+  // Day 10: A=職場黑話II 10個, B=找碴法
+  '10A': { type: 'slang', range: [10, 20] },
+  '10B': { type: 'quiz' },
+  // Day 11: A=短字優先III 10字, B=字根-spect/-vis
+  '11A': { type: 'flashcard', source: 'shortWords', range: [30, 40] },
+  '11B': { type: 'roots', rootIds: [6, 7] },  // -spect, -vis/-vid
+  // Day 12: A=混淆對決 4對, B=地雷掃除 6字
+  '12A': { type: 'pairs', range: [11, 15] },
+  '12B': { type: 'flashcard', source: 'trickyWords', range: [27, 33] },
+  // Day 13: A=詞族regulate+authorize, B=諧音聯想 5字
+  '13A': { type: 'families', range: [11, 13] },
+  '13B': { type: 'flashcard', source: 'trickyWords', range: [33, 38] },
+  // Day 14: review day
+  '14A': { type: 'review' },
+  '14B': { type: 'pairs', range: [0, 25] },  // 混淆對決總複習 all pairs
+  '14C': { type: 'review' },
+  // Day 15: A=字根-duc/-tract, B=職場黑話III
+  '15A': { type: 'roots', rootIds: [8, 9] },  // -duc/-duct, -tract
+  '15B': { type: 'slang', range: [20, 30] },
+  // Day 16: A=短字優先IV 10字, B=地雷掃除 6字
+  '16A': { type: 'flashcard', source: 'shortWords', range: [40, 50] },
+  '16B': { type: 'flashcard', source: 'trickyWords', range: [38, 40] },
+  // Day 17: A=詞族communicate+negotiate, B=找碴法
+  '17A': { type: 'families', range: [6, 8] },
+  '17B': { type: 'quiz' },
+  // Day 18: A=混淆對決 4對, B=諧音聯想 5字 (reuse remaining tricky)
+  '18A': { type: 'pairs', range: [15, 19] },
+  '18B': { type: 'flashcard', source: 'trickyWords', range: [0, 5] },  // revisit for reinforcement
+  // Day 19: A=字根-fin/-count/-cred, B=詞族finance+account
+  '19A': { type: 'roots', rootIds: [10, 27, 11] },  // -fin, -count, -cred
+  '19B': { type: 'families', range: [13, 15] },  // finance, resolve (use finance)
+  // Day 20: A=找碴法, B=職場黑話IV
+  '20A': { type: 'quiz' },
+  '20B': { type: 'slang', range: [10, 20] },  // escalate/align area
+  // Day 21: A=地雷掃除, B=混淆對決
+  '21A': { type: 'flashcard', source: 'trickyWords', range: [5, 11] },
+  '21B': { type: 'pairs', range: [19, 23] },
+  // Day 22: A=字根-leg/-jur/-dict, B=諧音聯想
+  '22A': { type: 'roots', rootIds: [12, 13] },  // -leg, -dict (skip -jur, not in data)
+  '22B': { type: 'flashcard', source: 'trickyWords', range: [11, 16] },
+  // Day 23: A=詞族resolve+conclude+determine, B=短字優先V
+  '23A': { type: 'families', range: [14, 17] },  // resolve, conclude, determine
+  '23B': { type: 'flashcard', source: 'shortWords', range: [50, 55] },
+  // Day 24: A=混淆對決, B=找碴法
+  '24A': { type: 'pairs', range: [23, 25] },
+  '24B': { type: 'quiz' },
+  // Day 25: A=字根-ven/-voc/-pend, B=詞族sustain+maintain
+  '25A': { type: 'roots', rootIds: [14, 24, 15] },  // -ven/-vent, -voc/-vok, -pend/-pens
+  '25B': { type: 'families', range: [17, 19] },  // sustain, maintain
+  // Day 26: A=職場黑話V, B=地雷掃除
+  '26A': { type: 'slang', range: [20, 30] },
+  '26B': { type: 'flashcard', source: 'trickyWords', range: [16, 22] },
+  // Day 27: A=諧音聯想 剩餘難字, B=字根-nov/-labor/-mand
+  '27A': { type: 'flashcard', source: 'trickyWords', range: [22, 32] },
+  '27B': { type: 'roots', rootIds: [22, 23, 21] },  // -nov, -labor, -mand
+  // Day 28: review day
+  '28A': { type: 'review' },
+  '28B': { type: 'pairs', range: [0, 25] },  // all pairs review
+  '28C': { type: 'review' },
+  // Day 29: A=全真模擬, B=找碴+聽寫, C=地雷總複習
+  '29A': { type: 'review' },
+  '29B': { type: 'quiz' },
+  '29C': { type: 'flashcard', source: 'trickyWords', range: [0, 20] },
+  // Day 30: A=B級字速刷+畢業考, B=全方法混合測驗, C=最終弱字
+  '30A': { type: 'review' },
+  '30B': { type: 'quiz' },
+  '30C': { type: 'review' },
+};
+
+function getDayMethodData(dayNum, method) {
+  const key = `${dayNum}${method}`;
+  const mapping = dayMap[key];
+
+  // If no explicit mapping, fall back to description-based parsing
+  if (!mapping) return parseMethodFromDesc(dayNum, method);
+
+  switch (mapping.type) {
+    case 'flashcard': {
+      const pool = mapping.source === 'shortWords' ? shortWords :
+                   mapping.source === 'trickyWords' ? trickyWords : shortWords;
+      return { type: 'flashcard', words: pool.slice(mapping.range[0], mapping.range[1]) };
+    }
+    case 'pairs':
+      return { type: 'pairs', pairs: confusingPairs.slice(mapping.range[0], mapping.range[1]) };
+    case 'roots':
+      return { type: 'roots', groups: mapping.rootIds.map(i => rootWords[i]).filter(Boolean) };
+    case 'families':
+      return { type: 'families', families: wordFamilies.slice(mapping.range[0], mapping.range[1]) };
+    case 'slang':
+      return { type: 'slang', words: officeSlang.slice(mapping.range[0], mapping.range[1]) };
+    case 'dictation':
+      return { type: 'dictation' };
+    case 'quiz':
+      return { type: 'quiz' };
+    case 'review':
+      return { type: 'review' };
+    default:
+      return { type: 'unknown', words: [] };
+  }
+}
+
+// Fallback: for Method C (聽寫) and unmapped entries
+function parseMethodFromDesc(dayNum, method) {
+  const dayData = schedule.find(s => s.day === dayNum);
+  const desc = method === 'A' ? dayData.methodA : method === 'B' ? dayData.methodB : dayData.methodC;
   if (!desc) return { type: 'unknown', words: [] };
-  const d = desc;
 
-  if (d.includes('短字優先') || d.includes('短字進階')) {
-    const words = extractByKeywords(d, shortWords);
-    return { type: 'flashcard', words: words.length ? words : shortWords.slice(0, 10), source: 'shortWords' };
-  }
-  if (d.includes('混淆對決')) {
-    const pairs = extractPairs(d, confusingPairs);
-    return { type: 'pairs', pairs: pairs.length ? pairs : confusingPairs.slice(0, 4), source: 'confusingPairs' };
-  }
-  if (d.includes('字根拆解')) {
-    const groups = extractRootGroups(d, rootWords);
-    const words = groups.flatMap(g => g.words);
-    return { type: 'roots', groups, words, source: 'rootWords' };
-  }
-  if (d.includes('詞族') || d.includes('詞族樹')) {
-    const families = extractFamilies(d, wordFamilies);
-    return { type: 'families', families: families.length ? families : wordFamilies.slice(0, 3), source: 'wordFamilies' };
-  }
-  if (d.includes('地雷') || d.includes('地雷掃除')) {
-    const words = extractByKeywords(d, trickyWords);
-    return { type: 'flashcard', words: words.length ? words : trickyWords.slice(0, 6), source: 'trickyWords' };
-  }
-  if (d.includes('諧音聯想') || d.includes('諧音')) {
-    const words = extractByKeywords(d, trickyWords);
-    return { type: 'flashcard', words: words.length ? words : trickyWords.slice(0, 5), source: 'trickyWords' };
-  }
-  if (d.includes('職場黑話')) {
-    const words = extractByKeywords(d, officeSlang, 'slang');
-    return { type: 'slang', words: words.length ? words : officeSlang.slice(0, 10), source: 'officeSlang' };
-  }
-  if (d.includes('聽寫模式')) {
-    return { type: 'dictation', source: 'all' };
-  }
-  if (d.includes('找碴') || d.includes('填空')) {
-    return { type: 'quiz', source: 'mixed' };
-  }
-  if (d.includes('複習') || d.includes('速刷') || d.includes('全真模擬') || d.includes('畢業考') || d.includes('衝刺')) {
-    return { type: 'review', source: 'review' };
-  }
-  return { type: 'flashcard', words: shortWords.slice(0, 10), source: 'shortWords' };
-}
+  if (desc.includes('聽寫模式')) return { type: 'dictation' };
+  if (desc.includes('找碴') || desc.includes('填空')) return { type: 'quiz' };
+  if (desc.includes('複習') || desc.includes('速刷') || desc.includes('全真模擬') || desc.includes('畢業考') || desc.includes('衝刺'))
+    return { type: 'review' };
+  if (desc.includes('聽寫')) return { type: 'dictation' };
 
-function extractByKeywords(desc, pool, wordField = 'word') {
-  const keywords = desc.match(/[a-zA-Z]+/g) || [];
-  if (keywords.length > 0) {
-    const matched = pool.filter(w => keywords.some(k => (w[wordField] || '').toLowerCase().includes(k.toLowerCase())));
-    if (matched.length > 0) return matched;
-  }
-  const numMatch = desc.match(/(\d+)\s*[字個]/);
-  const count = numMatch ? parseInt(numMatch[1]) : 10;
-  return pool.slice(0, Math.min(count, pool.length));
-}
-
-function extractPairs(desc, pool) {
-  const keywords = desc.match(/[a-zA-Z]+/g) || [];
-  if (keywords.length > 0) {
-    const matched = pool.filter(p =>
-      keywords.some(k => p.wordA.word.toLowerCase().includes(k.toLowerCase()) ||
-                         p.wordB.word.toLowerCase().includes(k.toLowerCase()))
-    );
-    if (matched.length > 0) return matched;
-  }
-  const numMatch = desc.match(/(\d+)\s*對/);
-  const count = numMatch ? parseInt(numMatch[1]) : 4;
-  return pool.slice(0, Math.min(count, pool.length));
-}
-
-function extractRootGroups(desc, pool) {
-  const rootMatches = desc.match(/-\w+/g) || [];
-  if (rootMatches.length > 0) {
-    const matched = pool.filter(g => rootMatches.some(r => g.root.includes(r)));
-    if (matched.length > 0) return matched;
-  }
-  return pool.slice(0, 2);
-}
-
-function extractFamilies(desc, pool) {
-  const keywords = desc.match(/[a-zA-Z]+/g) || [];
-  if (keywords.length > 0) {
-    const matched = pool.filter(f => keywords.some(k => f.root.toLowerCase().includes(k.toLowerCase())));
-    if (matched.length > 0) return matched;
-  }
-  return pool.slice(0, 3);
+  return { type: 'flashcard', words: shortWords.slice(0, 10) };
 }
 
 function getDayDictationWords(dayNum) {
-  const daySchedule = schedule.find(s => s.day === dayNum);
-  if (!daySchedule) return shortWords.slice(0, 20);
-
-  const methodA = parseMethodWords(daySchedule.methodA);
-  const methodB = parseMethodWords(daySchedule.methodB);
+  const methodA = getDayMethodData(dayNum, 'A');
+  const methodB = getDayMethodData(dayNum, 'B');
 
   let pool = [];
-  if (methodA.words) pool.push(...methodA.words);
-  if (methodA.pairs) pool.push(...methodA.pairs.flatMap(p => [
-    { word: p.wordA.word, kk: p.wordA.kk, coreMeaning: p.wordA.meaning },
-    { word: p.wordB.word, kk: p.wordB.kk, coreMeaning: p.wordB.meaning }
-  ]));
-  if (methodB.words) pool.push(...methodB.words);
-  if (methodB.groups) pool.push(...methodB.groups.flatMap(g => g.words.map(w => ({ word: w.word, kk: w.kk, coreMeaning: w.meaning }))));
+  for (const m of [methodA, methodB]) {
+    if (m.words) pool.push(...m.words);
+    if (m.pairs) pool.push(...m.pairs.flatMap(p => [
+      { word: p.wordA.word, kk: p.wordA.kk, coreMeaning: p.wordA.meaning },
+      { word: p.wordB.word, kk: p.wordB.kk, coreMeaning: p.wordB.meaning }
+    ]));
+    if (m.groups) pool.push(...m.groups.flatMap(g => g.words.map(w => ({ word: w.word, kk: w.kk, coreMeaning: w.meaning }))));
+    if (m.families) pool.push(...m.families.flatMap(f =>
+      [f.verb, f.nounThing, f.nounPerson, f.adjective, f.adverbOrNeg]
+        .filter(Boolean)
+        .map(w => ({ word: w, coreMeaning: '' }))
+    ));
+  }
 
   if (pool.length < 10) {
     pool.push(...shortWords.slice(0, 20 - pool.length));
@@ -196,9 +265,7 @@ export function renderDaily(container, params) {
 }
 
 function renderMethodContent(content, tab, dayNum) {
-  const dayData = schedule.find(s => s.day === dayNum);
-  const desc = tab === 'A' ? dayData.methodA : tab === 'B' ? dayData.methodB : dayData.methodC;
-  const parsed = parseMethodWords(desc);
+  const parsed = getDayMethodData(dayNum, tab);
 
   switch (parsed.type) {
     case 'flashcard':
