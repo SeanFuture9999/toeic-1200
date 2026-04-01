@@ -37,7 +37,7 @@ export const schedule = [
   },
   {
     "day": 5,
-    "methodA": "職場黑話：ASAP/EOD等10個",
+    "methodA": "情境片語：ASAP/EOD等10個",
     "methodB": "諧音聯想：accommodate等10字",
     "methodC": "聽寫模式：20字",
     "newWords": 40,
@@ -82,7 +82,7 @@ export const schedule = [
   },
   {
     "day": 10,
-    "methodA": "職場黑話II：circle back等10個",
+    "methodA": "情境片語II：circle back等10個",
     "methodB": "找碴法：商務信件5題+5字",
     "methodC": "聽寫模式：15字",
     "newWords": 40,
@@ -128,7 +128,7 @@ export const schedule = [
   {
     "day": 15,
     "methodA": "字根拆解：-duc/-tract(10)",
-    "methodB": "職場黑話III：leverage/pipeline等10字",
+    "methodB": "情境片語III：leverage/pipeline等10字",
     "methodC": "聽寫模式：20字",
     "newWords": 40,
     "cumulative": 600,
@@ -173,7 +173,7 @@ export const schedule = [
   {
     "day": 20,
     "methodA": "找碴法：財報文件5題+5字",
-    "methodB": "職場黑話IV：escalate/align等10字",
+    "methodB": "情境片語IV：escalate/align等10字",
     "methodC": "聽寫模式：20字",
     "newWords": 40,
     "cumulative": 800,
@@ -226,7 +226,7 @@ export const schedule = [
   },
   {
     "day": 26,
-    "methodA": "職場黑話V：deep dive/touchbase等10字",
+    "methodA": "情境片語V：deep dive/touchbase等10字",
     "methodB": "地雷掃除：prospect等6字",
     "methodC": "聽寫模式：20字",
     "newWords": 40,

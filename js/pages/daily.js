@@ -5,7 +5,7 @@ import { confusingPairs } from '../data/confusingPairs.js';
 import { trickyWords } from '../data/trickyWords.js';
 import { rootWords } from '../data/rootWords.js';
 import { wordFamilies } from '../data/wordFamilies.js';
-import { officeSlang } from '../data/officeSlang.js';
+import { toeicPhrases } from '../data/toeicPhrases.js';
 import { renderFlashcards } from '../components/flashcard.js';
 import { renderQuiz, buildMeaningQuiz } from '../components/quiz.js';
 import { renderDictation } from '../components/dictation.js';
@@ -18,8 +18,8 @@ const allWordsList = [
   ...confusingPairs.flatMap(p => [p.wordA.word, p.wordB.word]),
   ...trickyWords.map(w => w.word),
   ...rootWords.flatMap(g => g.words.map(w => w.word)),
-  ...wordFamilies.flatMap(f => [f.verb, f.nounThing, f.nounPerson, f.adjective, f.adverbOrNeg].filter(Boolean)),
-  ...officeSlang.map(s => s.slang)
+  ...wordFamilies.flatMap(f => [f.verb, f.nounThing, f.nounPerson, f.adjective, f.adverbOrNeg].filter(Boolean).map(x => typeof x === 'string' ? x : x.word)),
+  ...toeicPhrases.map(s => s.keyWord)
 ].filter(Boolean);
 
 // ──────────────────────────────────────────────
@@ -30,7 +30,7 @@ const allWordsList = [
 // trickyWords: 40 words, ids 1-40 (index 0-39)
 // rootWords: 30 groups, ids 1-30 (index 0-29)
 // wordFamilies: 20 families, ids 1-20 (index 0-19)
-// officeSlang: 30 slangs, ids 1-30 (index 0-29)
+// toeicPhrases: 30 phrases, ids 1-30 (index 0-29)
 
 const dayMap = {
   // Day 1: A=短字優先 10字, B=字根-ject+-port
@@ -46,7 +46,7 @@ const dayMap = {
   '4A': { type: 'pairs', range: [4, 7] },
   '4B': { type: 'families', range: [0, 1] },  // assess
   // Day 5: A=職場黑話 10個, B=諧音聯想 10字
-  '5A': { type: 'slang', range: [0, 10] },
+  '5A': { type: 'phrases', range: [0, 10] },
   '5B': { type: 'flashcard', source: 'trickyWords', range: [6, 16] },
   // Day 6: A=詞族comply+manage, B=找碴法
   '6A': { type: 'families', range: [1, 3] },  // comply, manage
@@ -61,7 +61,7 @@ const dayMap = {
   '9A': { type: 'families', range: [5, 8] },  // invest, compete, employ... (use perform->9 too? no just 5,6,7=invest,perform,compete... let me map properly)
   '9B': { type: 'flashcard', source: 'trickyWords', range: [22, 27] },
   // Day 10: A=職場黑話II 10個, B=找碴法
-  '10A': { type: 'slang', range: [10, 20] },
+  '10A': { type: 'phrases', range: [10, 20] },
   '10B': { type: 'quiz' },
   // Day 11: A=短字優先III 10字, B=字根-spect/-vis
   '11A': { type: 'flashcard', source: 'shortWords', range: [30, 40] },
@@ -78,7 +78,7 @@ const dayMap = {
   '14C': { type: 'review' },
   // Day 15: A=字根-duc/-tract, B=職場黑話III
   '15A': { type: 'roots', rootIds: [8, 9] },  // -duc/-duct, -tract
-  '15B': { type: 'slang', range: [20, 30] },
+  '15B': { type: 'phrases', range: [20, 30] },
   // Day 16: A=短字優先IV 10字, B=地雷掃除 6字
   '16A': { type: 'flashcard', source: 'shortWords', range: [40, 50] },
   '16B': { type: 'flashcard', source: 'trickyWords', range: [38, 40] },
@@ -93,7 +93,7 @@ const dayMap = {
   '19B': { type: 'families', range: [13, 15] },  // finance, resolve (use finance)
   // Day 20: A=找碴法, B=職場黑話IV
   '20A': { type: 'quiz' },
-  '20B': { type: 'slang', range: [10, 20] },  // escalate/align area
+  '20B': { type: 'phrases', range: [10, 20] },  // escalate/align area
   // Day 21: A=地雷掃除, B=混淆對決
   '21A': { type: 'flashcard', source: 'trickyWords', range: [5, 11] },
   '21B': { type: 'pairs', range: [19, 23] },
@@ -110,7 +110,7 @@ const dayMap = {
   '25A': { type: 'roots', rootIds: [14, 24, 15] },  // -ven/-vent, -voc/-vok, -pend/-pens
   '25B': { type: 'families', range: [17, 19] },  // sustain, maintain
   // Day 26: A=職場黑話V, B=地雷掃除
-  '26A': { type: 'slang', range: [20, 30] },
+  '26A': { type: 'phrases', range: [20, 30] },
   '26B': { type: 'flashcard', source: 'trickyWords', range: [16, 22] },
   // Day 27: A=諧音聯想 剩餘難字, B=字根-nov/-labor/-mand
   '27A': { type: 'flashcard', source: 'trickyWords', range: [22, 32] },
@@ -148,8 +148,8 @@ function getDayMethodData(dayNum, method) {
       return { type: 'roots', groups: mapping.rootIds.map(i => rootWords[i]).filter(Boolean) };
     case 'families':
       return { type: 'families', families: wordFamilies.slice(mapping.range[0], mapping.range[1]) };
-    case 'slang':
-      return { type: 'slang', words: officeSlang.slice(mapping.range[0], mapping.range[1]) };
+    case 'phrases':
+      return { type: 'phrases', words: toeicPhrases.slice(mapping.range[0], mapping.range[1]) };
     case 'dictation':
       return { type: 'dictation' };
     case 'quiz':
@@ -191,7 +191,10 @@ function getDayDictationWords(dayNum) {
     if (m.families) pool.push(...m.families.flatMap(f =>
       [f.verb, f.nounThing, f.nounPerson, f.adjective, f.adverbOrNeg]
         .filter(Boolean)
-        .map(w => ({ word: w, coreMeaning: '' }))
+        .map(x => {
+          const w = typeof x === 'string' ? { word: x, meaning: '' } : x;
+          return { word: w.word, coreMeaning: w.meaning || '' };
+        })
     ));
   }
 
@@ -280,8 +283,8 @@ function renderMethodContent(content, tab, dayNum) {
     case 'families':
       renderFamilyView(content, parsed.families);
       break;
-    case 'slang':
-      renderSlangView(content, parsed.words);
+    case 'phrases':
+      renderPhraseView(content, parsed.words);
       break;
     case 'dictation':
       const dictWords = getDayDictationWords(dayNum);
@@ -298,7 +301,7 @@ function renderMethodContent(content, tab, dayNum) {
         const reviewWords = weak.slice(0, 20).map(w => {
           const found = shortWords.find(sw => sw.word === w.word) ||
                         trickyWords.find(tw => tw.word === w.word) ||
-                        officeSlang.find(os => os.slang === w.word);
+                        toeicPhrases.find(p => p.phrase === w.word || p.keyWord === w.word);
           return found || { word: w.word, coreMeaning: '(複習)' };
         });
         renderFlashcards(content, reviewWords);
@@ -320,17 +323,22 @@ function renderRootView(content, groups) {
         <span class="root-badge">${g.root}</span>
         <span class="root-meaning">= ${g.rootMeaning}</span>
       </div>
-      <div class="root-words">
-        ${g.words.map(w => `
-          <div class="card" style="padding:10px;margin-bottom:0">
+      ${g.words.map(w => `
+        <div class="card" style="padding:12px;margin-bottom:8px;border-left:3px solid var(--primary)">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
             ${speakerButton(w.word, 0.85, 'speaker-btn')}
-            <div style="font-weight:700;margin-top:4px">${w.word}</div>
-            <div style="font-size:.8rem;color:var(--text-secondary)">${w.kk || ''}</div>
-            <div style="font-size:.85rem;color:var(--primary)">${w.meaning || ''}</div>
+            <span style="font-size:1.2rem;font-weight:700">${w.word}</span>
+            <span style="font-size:.8rem;color:var(--text-secondary)">${w.kk || ''}</span>
+            <span style="font-size:.85rem;color:var(--primary);font-weight:600">${w.meaning || ''}</span>
           </div>
-        `).join('')}
-      </div>
-      ${g.dictationHint ? `<div style="font-size:.8rem;color:var(--text-secondary);margin-top:8px">🎧 ${g.dictationHint}</div>` : ''}
+          ${w.breakdown ? `<div style="background:var(--primary-light);padding:8px 12px;border-radius:var(--radius-sm);font-size:.9rem">
+            ${w.prefix ? `<span style="color:var(--danger);font-weight:700">${w.prefix}</span><span style="color:var(--text-secondary);font-size:.8rem">(${w.prefixMeaning})</span> + ` : ''}
+            <span style="color:var(--primary);font-weight:700">${g.root}</span><span style="color:var(--text-secondary);font-size:.8rem">(${g.rootMeaning})</span>
+            <div style="margin-top:4px;font-weight:600">${w.breakdown}</div>
+          </div>` : ''}
+        </div>
+      `).join('')}
+      ${g.dictationHint ? `<div style="font-size:.8rem;color:var(--text-secondary);margin-top:4px">🎧 ${g.dictationHint}</div>` : ''}
     </div>`;
   }
   content.innerHTML = html;
@@ -341,27 +349,26 @@ function renderFamilyView(content, families) {
   let html = '';
   for (const f of families) {
     const cells = [
-      { label: '動詞', word: f.verb },
-      { label: '名詞(事)', word: f.nounThing },
-      { label: '名詞(人)', word: f.nounPerson },
-      { label: '形容詞', word: f.adjective },
-      { label: '副詞/否定', word: f.adverbOrNeg }
+      { label: '動詞', data: f.verb },
+      { label: '名詞(事)', data: f.nounThing },
+      { label: '名詞(人)', data: f.nounPerson },
+      { label: '形容詞', data: f.adjective },
+      { label: '副詞/否定', data: f.adverbOrNeg }
     ];
     html += `<div class="card">
       <div class="root-header">
         <span class="root-badge">${f.root}</span>
       </div>
       <div class="family-grid">
-        ${cells.map(c => c.word ?
-          `<div class="family-cell">
+        ${cells.map(c => {
+          if (!c.data) return `<div class="family-cell empty"><div class="family-cell-label">${c.label}</div><div class="family-cell-word">—</div></div>`;
+          const w = typeof c.data === 'string' ? { word: c.data, meaning: '' } : c.data;
+          return `<div class="family-cell">
             <div class="family-cell-label">${c.label}</div>
-            <div class="family-cell-word">${c.word}</div>
-          </div>` :
-          `<div class="family-cell empty">
-            <div class="family-cell-label">${c.label}</div>
-            <div class="family-cell-word">—</div>
-          </div>`
-        ).join('')}
+            <div class="family-cell-word">${w.word}</div>
+            ${w.meaning ? `<div style="font-size:.7rem;color:var(--primary);margin-top:2px">${w.meaning}</div>` : ''}
+          </div>`;
+        }).join('')}
       </div>
       ${f.part5Hint ? `<div style="margin-top:8px;font-size:.85rem;background:var(--primary-light);padding:8px 12px;border-radius:var(--radius-sm)">📝 ${f.part5Hint}</div>` : ''}
       ${f.listeningDiff ? `<div style="margin-top:4px;font-size:.8rem;color:var(--text-secondary)">🎧 ${f.listeningDiff}</div>` : ''}
@@ -370,20 +377,19 @@ function renderFamilyView(content, families) {
   content.innerHTML = html;
 }
 
-function renderSlangView(content, words) {
+function renderPhraseView(content, phrases) {
   let html = '';
-  for (const w of words) {
+  for (const p of phrases) {
     html += `<div class="card">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
-        ${speakerButton(w.slang, 0.85, 'speaker-btn')}
-        <div style="font-size:1.3rem;font-weight:700">${w.slang}</div>
-        <span style="font-size:.8rem;color:var(--text-secondary)">${w.kk || ''}</span>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+        ${speakerButton(p.phrase, 0.85, 'speaker-btn')}
+        <div style="font-size:1.2rem;font-weight:700">${p.phrase}</div>
       </div>
-      <div class="slang-real">${w.realMeaning || ''}</div>
-      <div class="slang-false">${w.falseTranslation || ''}</div>
-      ${w.toeicWords ? `<div style="font-size:.8rem;color:var(--primary)">對應多益字：${w.toeicWords}</div>` : ''}
-      ${w.context ? `<div class="slang-context">${w.context}</div>` : ''}
-      ${w.speedTip ? `<div style="font-size:.75rem;color:var(--text-secondary);margin-top:4px">🔊 ${w.speedTip}</div>` : ''}
+      <div style="font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:4px">${p.meaning}</div>
+      <div style="font-size:.85rem;background:#f0fff4;padding:8px 12px;border-radius:var(--radius-sm);margin-bottom:6px;font-style:italic">${p.example}</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <span style="font-size:.75rem;background:var(--primary-light);color:var(--primary);padding:2px 8px;border-radius:10px">${p.toeicPart}</span>
+      </div>
     </div>`;
   }
   content.innerHTML = html;

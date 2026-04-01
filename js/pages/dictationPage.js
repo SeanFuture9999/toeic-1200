@@ -2,7 +2,7 @@ import { shortWords } from '../data/shortWords.js';
 import { confusingPairs } from '../data/confusingPairs.js';
 import { trickyWords } from '../data/trickyWords.js';
 import { rootWords } from '../data/rootWords.js';
-import { officeSlang } from '../data/officeSlang.js';
+import { toeicPhrases } from '../data/toeicPhrases.js';
 import { renderDictation } from '../components/dictation.js';
 
 const allWordsList = [
@@ -10,7 +10,7 @@ const allWordsList = [
   ...confusingPairs.flatMap(p => [p.wordA.word, p.wordB.word]),
   ...trickyWords.map(w => w.word),
   ...rootWords.flatMap(g => g.words.map(w => w.word)),
-  ...officeSlang.map(s => s.slang)
+  ...toeicPhrases.map(p => p.keyWord)
 ].filter(Boolean);
 
 export function renderDictationPage(container) {
@@ -20,7 +20,7 @@ export function renderDictationPage(container) {
     switch (activeFilter) {
       case 'short': return shortWords;
       case 'tricky': return trickyWords.map(w => ({ word: w.word, kk: w.kk, coreMeaning: w.realMeaning }));
-      case 'slang': return officeSlang.map(s => ({ word: s.slang, kk: s.kk, coreMeaning: s.realMeaning }));
+      case 'roots': return rootWords.flatMap(g => g.words.map(w => ({ word: w.word, kk: w.kk, coreMeaning: w.meaning })));
       case 'pairs': return confusingPairs.flatMap(p => [
         { word: p.wordA.word, kk: p.wordA.kk, coreMeaning: p.wordA.meaning },
         { word: p.wordB.word, kk: p.wordB.kk, coreMeaning: p.wordB.meaning }
@@ -29,7 +29,7 @@ export function renderDictationPage(container) {
         return [
           ...shortWords.slice(0, 15),
           ...trickyWords.slice(0, 10).map(w => ({ word: w.word, kk: w.kk, coreMeaning: w.realMeaning })),
-          ...officeSlang.slice(0, 5).map(s => ({ word: s.slang, kk: s.kk, coreMeaning: s.realMeaning }))
+          ...rootWords.slice(0, 2).flatMap(g => g.words.map(w => ({ word: w.word, kk: w.kk, coreMeaning: w.meaning })))
         ];
     }
   }
@@ -42,7 +42,7 @@ export function renderDictationPage(container) {
         <span class="chip ${activeFilter === 'short' ? 'active' : ''}" data-f="short">短字優先</span>
         <span class="chip ${activeFilter === 'tricky' ? 'active' : ''}" data-f="tricky">地雷字</span>
         <span class="chip ${activeFilter === 'pairs' ? 'active' : ''}" data-f="pairs">混淆字</span>
-        <span class="chip ${activeFilter === 'slang' ? 'active' : ''}" data-f="slang">職場黑話</span>
+        <span class="chip ${activeFilter === 'roots' ? 'active' : ''}" data-f="roots">字根字</span>
       </div>
       <div id="dictation-area"></div>
     `;

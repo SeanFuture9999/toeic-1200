@@ -3,7 +3,7 @@ import { confusingPairs } from '../data/confusingPairs.js';
 import { trickyWords } from '../data/trickyWords.js';
 import { rootWords } from '../data/rootWords.js';
 import { wordFamilies } from '../data/wordFamilies.js';
-import { officeSlang } from '../data/officeSlang.js';
+import { toeicPhrases } from '../data/toeicPhrases.js';
 import { speakerButton, bindSpeakerButtons } from '../speech.js';
 import { store } from '../store.js';
 
@@ -17,13 +17,13 @@ function buildAllWords() {
   trickyWords.forEach(w => all.push({ word: w.word, kk: w.kk, meaning: w.realMeaning, freq: null, method: '地雷+諧音' }));
   rootWords.forEach(g => g.words.forEach(w => all.push({ word: w.word, kk: w.kk, meaning: w.meaning, freq: null, method: '字根拆解' })));
   wordFamilies.forEach(f => {
-    [f.verb, f.nounThing, f.nounPerson, f.adjective, f.adverbOrNeg].filter(Boolean).forEach(w => {
-      if (!all.find(a => a.word === w)) all.push({ word: w, kk: null, meaning: '', freq: null, method: '詞族家族' });
+    [f.verb, f.nounThing, f.nounPerson, f.adjective, f.adverbOrNeg].filter(Boolean).forEach(x => {
+      const w = typeof x === 'string' ? { word: x, meaning: '' } : x;
+      if (!all.find(a => a.word === w.word)) all.push({ word: w.word, kk: null, meaning: w.meaning || '', freq: null, method: '詞族家族' });
     });
   });
-  officeSlang.forEach(s => all.push({ word: s.slang, kk: s.kk, meaning: s.realMeaning, freq: null, method: '職場黑話' }));
+  toeicPhrases.forEach(p => all.push({ word: p.phrase, kk: p.kk, meaning: p.meaning, freq: null, method: '情境片語' }));
 
-  // Deduplicate
   const seen = new Set();
   return all.filter(w => {
     if (seen.has(w.word)) return false;

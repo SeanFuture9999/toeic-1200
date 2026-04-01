@@ -1,7 +1,7 @@
 import { store } from '../store.js';
 import { shortWords } from '../data/shortWords.js';
 import { trickyWords } from '../data/trickyWords.js';
-import { officeSlang } from '../data/officeSlang.js';
+import { toeicPhrases } from '../data/toeicPhrases.js';
 import { confusingPairs } from '../data/confusingPairs.js';
 import { rootWords } from '../data/rootWords.js';
 import { wordFamilies } from '../data/wordFamilies.js';
@@ -13,7 +13,7 @@ function initMap() {
   if (allWordsMap.size > 0) return;
   shortWords.forEach(w => allWordsMap.set(w.word, { ...w, method: '短字優先' }));
   trickyWords.forEach(w => allWordsMap.set(w.word, { word: w.word, kk: w.kk, coreMeaning: w.realMeaning, method: '地雷+諧音' }));
-  officeSlang.forEach(w => allWordsMap.set(w.slang, { word: w.slang, kk: w.kk, coreMeaning: w.realMeaning, method: '職場黑話' }));
+  toeicPhrases.forEach(p => allWordsMap.set(p.phrase, { word: p.phrase, kk: p.kk, coreMeaning: p.meaning, method: '情境片語' }));
   confusingPairs.forEach(p => {
     allWordsMap.set(p.wordA.word, { word: p.wordA.word, kk: p.wordA.kk, coreMeaning: p.wordA.meaning, method: '混淆對決' });
     allWordsMap.set(p.wordB.word, { word: p.wordB.word, kk: p.wordB.kk, coreMeaning: p.wordB.meaning, method: '混淆對決' });
@@ -22,8 +22,9 @@ function initMap() {
     allWordsMap.set(w.word, { word: w.word, kk: w.kk, coreMeaning: w.meaning, method: '字根拆解' });
   }));
   wordFamilies.forEach(f => {
-    [f.verb, f.nounThing, f.nounPerson, f.adjective, f.adverbOrNeg].filter(Boolean).forEach(w => {
-      if (!allWordsMap.has(w)) allWordsMap.set(w, { word: w, coreMeaning: '', method: '詞族家族' });
+    [f.verb, f.nounThing, f.nounPerson, f.adjective, f.adverbOrNeg].filter(Boolean).forEach(x => {
+      const w = typeof x === 'string' ? { word: x, meaning: '' } : x;
+      if (!allWordsMap.has(w.word)) allWordsMap.set(w.word, { word: w.word, coreMeaning: w.meaning || '', method: '詞族家族' });
     });
   });
 }

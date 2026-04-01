@@ -2,198 +2,138 @@ export const rootWords = [
   {
     "id": 1,
     "root": "-ject",
-    "rootMeaning": "丟投",
+    "rootMeaning": "丟、投擲",
     "words": [
-      {
-        "word": "project",
-        "kk": "/ˈprɑdʒɛkt/",
-        "meaning": "投射"
-      },
-      {
-        "word": "reject",
-        "kk": "/rɪˈdʒɛkt/",
-        "meaning": "拒絕"
-      },
-      {
-        "word": "object",
-        "kk": "/əbˈdʒɛkt/",
-        "meaning": "反對"
-      },
-      {
-        "word": "subject",
-        "kk": "/ˈsʌbdʒɪkt/",
-        "meaning": "主題"
-      },
-      {
-        "word": "inject",
-        "kk": "/ɪnˈdʒɛkt/",
-        "meaning": "注入"
-      }
+      { "word": "project", "kk": "/ˈprɑdʒɛkt/", "meaning": "計畫；投射",
+        "prefix": "pro-", "prefixMeaning": "向前",
+        "breakdown": "pro(向前) + ject(丟) → 往前丟出想法 → 計畫/投射" },
+      { "word": "reject", "kk": "/rɪˈdʒɛkt/", "meaning": "拒絕",
+        "prefix": "re-", "prefixMeaning": "回去",
+        "breakdown": "re(回去) + ject(丟) → 丟回去 → 拒絕" },
+      { "word": "object", "kk": "/əbˈdʒɛkt/", "meaning": "反對；物體",
+        "prefix": "ob-", "prefixMeaning": "對面",
+        "breakdown": "ob(對面) + ject(丟) → 丟到對面去 → 反對" },
+      { "word": "subject", "kk": "/ˈsʌbdʒɪkt/", "meaning": "主題；使服從",
+        "prefix": "sub-", "prefixMeaning": "在下面",
+        "breakdown": "sub(下面) + ject(丟) → 被丟在下面壓住 → 使服從/受制於" },
+      { "word": "inject", "kk": "/ɪnˈdʒɛkt/", "meaning": "注入",
+        "prefix": "in-", "prefixMeaning": "進入",
+        "breakdown": "in(進入) + ject(丟) → 丟進去 → 注入" }
     ],
     "dictationHint": "5字都有/dʒɛkt/音"
   },
   {
     "id": 2,
     "root": "-port",
-    "rootMeaning": "搬運",
+    "rootMeaning": "搬運、攜帶",
     "words": [
-      {
-        "word": "import",
-        "kk": "/ɪmˈpɔrt/",
-        "meaning": "進口"
-      },
-      {
-        "word": "export",
-        "kk": "/ɛkˈspɔrt/",
-        "meaning": "出口"
-      },
-      {
-        "word": "transport",
-        "kk": "/trænsˈpɔrt/",
-        "meaning": "運輸"
-      },
-      {
-        "word": "portable",
-        "kk": "/ˈpɔrtəbəl/",
-        "meaning": "可攜帶"
-      },
-      {
-        "word": "report",
-        "kk": "/rɪˈpɔrt/",
-        "meaning": "報告"
-      }
+      { "word": "import", "kk": "/ɪmˈpɔrt/", "meaning": "進口",
+        "prefix": "im-", "prefixMeaning": "進入",
+        "breakdown": "im(進入) + port(搬) → 搬進來 → 進口" },
+      { "word": "export", "kk": "/ɛkˈspɔrt/", "meaning": "出口",
+        "prefix": "ex-", "prefixMeaning": "向外",
+        "breakdown": "ex(向外) + port(搬) → 搬出去 → 出口" },
+      { "word": "transport", "kk": "/trænsˈpɔrt/", "meaning": "運輸",
+        "prefix": "trans-", "prefixMeaning": "跨越",
+        "breakdown": "trans(跨越) + port(搬) → 跨地搬運 → 運輸" },
+      { "word": "portable", "kk": "/ˈpɔrtəbəl/", "meaning": "可攜帶的",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "port(搬) + able(能) → 能搬動的 → 可攜帶的" },
+      { "word": "report", "kk": "/rɪˈpɔrt/", "meaning": "報告",
+        "prefix": "re-", "prefixMeaning": "回去",
+        "breakdown": "re(回去) + port(搬) → 把消息搬回來 → 報告" }
     ],
     "dictationHint": "都有/pɔrt/音"
   },
   {
     "id": 3,
     "root": "-struct",
-    "rootMeaning": "建造",
+    "rootMeaning": "建造、堆疊",
     "words": [
-      {
-        "word": "construct",
-        "kk": "/kənˈstrʌkt/",
-        "meaning": "建造"
-      },
-      {
-        "word": "instruct",
-        "kk": "/ɪnˈstrʌkt/",
-        "meaning": "指導"
-      },
-      {
-        "word": "infrastructure 基礎建設",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "restructure 重組",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "destruction 破壞",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "construct", "kk": "/kənˈstrʌkt/", "meaning": "建造",
+        "prefix": "con-", "prefixMeaning": "一起",
+        "breakdown": "con(一起) + struct(建) → 合力建造 → 建設" },
+      { "word": "instruct", "kk": "/ɪnˈstrʌkt/", "meaning": "指導",
+        "prefix": "in-", "prefixMeaning": "進入",
+        "breakdown": "in(進入) + struct(建) → 在腦中建構知識 → 指導" },
+      { "word": "infrastructure", "kk": "/ˈɪnfrəˌstrʌktʃɝ/", "meaning": "基礎建設",
+        "prefix": "infra-", "prefixMeaning": "在下方",
+        "breakdown": "infra(下方) + structure(結構) → 底下的結構 → 基礎建設" },
+      { "word": "restructure", "kk": "/riːˈstrʌktʃɝ/", "meaning": "重組",
+        "prefix": "re-", "prefixMeaning": "再次",
+        "breakdown": "re(再次) + structure(結構) → 再建一次 → 重組" },
+      { "word": "destruction", "kk": "/dɪˈstrʌkʃən/", "meaning": "破壞",
+        "prefix": "de-", "prefixMeaning": "向下、去除",
+        "breakdown": "de(去除) + struct(建) → 把建好的拆掉 → 破壞" }
     ],
     "dictationHint": "都有/strʌkt/音"
   },
   {
     "id": 4,
     "root": "-mit",
-    "rootMeaning": "送",
+    "rootMeaning": "送、發送",
     "words": [
-      {
-        "word": "submit",
-        "kk": "/səbˈmɪt/",
-        "meaning": "提交"
-      },
-      {
-        "word": "permit",
-        "kk": "/pɝˈmɪt/",
-        "meaning": "允許"
-      },
-      {
-        "word": "commit",
-        "kk": "/kəˈmɪt/",
-        "meaning": "承諾"
-      },
-      {
-        "word": "transmit",
-        "kk": "/trænsˈmɪt/",
-        "meaning": "傳送"
-      },
-      {
-        "word": "omit",
-        "kk": "/oʊˈmɪt/",
-        "meaning": "省略"
-      }
+      { "word": "submit", "kk": "/səbˈmɪt/", "meaning": "提交；屈服",
+        "prefix": "sub-", "prefixMeaning": "在下面",
+        "breakdown": "sub(下面) + mit(送) → 從下往上送 → 提交/屈服" },
+      { "word": "permit", "kk": "/pɝˈmɪt/", "meaning": "允許",
+        "prefix": "per-", "prefixMeaning": "通過",
+        "breakdown": "per(通過) + mit(送) → 放行讓你通過 → 允許" },
+      { "word": "commit", "kk": "/kəˈmɪt/", "meaning": "承諾；犯罪",
+        "prefix": "com-", "prefixMeaning": "完全",
+        "breakdown": "com(完全) + mit(送) → 完全交出去 → 承諾/託付" },
+      { "word": "transmit", "kk": "/trænsˈmɪt/", "meaning": "傳送",
+        "prefix": "trans-", "prefixMeaning": "跨越",
+        "breakdown": "trans(跨越) + mit(送) → 送到另一端 → 傳送" },
+      { "word": "omit", "kk": "/oʊˈmɪt/", "meaning": "省略",
+        "prefix": "o-", "prefixMeaning": "離開(ob-變體)",
+        "breakdown": "o(離開) + mit(送) → 送走不要 → 省略" }
     ],
     "dictationHint": "都有/mɪt/音"
   },
   {
     "id": 5,
     "root": "-ceed/-cess",
-    "rootMeaning": "走",
+    "rootMeaning": "走、前進",
     "words": [
-      {
-        "word": "proceed 繼續",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "access 存取",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "exceed 超過",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "process 處理",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "succeed 成功",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "proceed", "kk": "/prəˈsiːd/", "meaning": "繼續進行",
+        "prefix": "pro-", "prefixMeaning": "向前",
+        "breakdown": "pro(向前) + ceed(走) → 往前走 → 繼續進行" },
+      { "word": "access", "kk": "/ˈæksɛs/", "meaning": "存取；進入",
+        "prefix": "ac-", "prefixMeaning": "朝向",
+        "breakdown": "ac(朝向) + cess(走) → 走得進去 → 進入/存取" },
+      { "word": "exceed", "kk": "/ɪkˈsiːd/", "meaning": "超過",
+        "prefix": "ex-", "prefixMeaning": "向外",
+        "breakdown": "ex(超出) + ceed(走) → 走超過界線 → 超過" },
+      { "word": "process", "kk": "/ˈprɑsɛs/", "meaning": "處理；過程",
+        "prefix": "pro-", "prefixMeaning": "向前",
+        "breakdown": "pro(向前) + cess(走) → 一步步往前走 → 過程/處理" },
+      { "word": "succeed", "kk": "/səkˈsiːd/", "meaning": "成功；繼承",
+        "prefix": "suc-", "prefixMeaning": "在下/接著",
+        "breakdown": "suc(接著) + ceed(走) → 跟著走到底 → 成功" }
     ],
     "dictationHint": "走路系列→方向不同"
   },
   {
     "id": 6,
     "root": "-fer",
-    "rootMeaning": "帶攜",
+    "rootMeaning": "帶、攜帶",
     "words": [
-      {
-        "word": "transfer 轉移",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "refer 提及",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "prefer 偏好",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "offer 提供",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "confer 商議",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "transfer", "kk": "/trænsˈfɝ/", "meaning": "轉移",
+        "prefix": "trans-", "prefixMeaning": "跨越",
+        "breakdown": "trans(跨越) + fer(帶) → 帶到另一邊 → 轉移" },
+      { "word": "refer", "kk": "/rɪˈfɝ/", "meaning": "提及；參考",
+        "prefix": "re-", "prefixMeaning": "回去",
+        "breakdown": "re(回) + fer(帶) → 帶回去看 → 參考/提及" },
+      { "word": "prefer", "kk": "/prɪˈfɝ/", "meaning": "偏好",
+        "prefix": "pre-", "prefixMeaning": "在前面",
+        "breakdown": "pre(前面) + fer(帶) → 放在前面 → 偏好" },
+      { "word": "offer", "kk": "/ˈɔfɝ/", "meaning": "提供",
+        "prefix": "of-", "prefixMeaning": "朝向(ob-變體)",
+        "breakdown": "of(朝向) + fer(帶) → 帶著東西過來 → 提供" },
+      { "word": "confer", "kk": "/kənˈfɝ/", "meaning": "商議；授予",
+        "prefix": "con-", "prefixMeaning": "一起",
+        "breakdown": "con(一起) + fer(帶) → 各自帶意見來 → 商議" }
     ],
     "dictationHint": "都有/fɝ/音"
   },
@@ -202,163 +142,113 @@ export const rootWords = [
     "root": "-spect",
     "rootMeaning": "看",
     "words": [
-      {
-        "word": "inspect 檢查",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "prospect 展望",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "perspective 觀點",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "respect 尊敬",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "suspect 懷疑",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "inspect", "kk": "/ɪnˈspɛkt/", "meaning": "檢查",
+        "prefix": "in-", "prefixMeaning": "往裡面",
+        "breakdown": "in(往裡) + spect(看) → 往裡面仔細看 → 檢查" },
+      { "word": "prospect", "kk": "/ˈprɑspɛkt/", "meaning": "展望；潛在客戶",
+        "prefix": "pro-", "prefixMeaning": "向前",
+        "breakdown": "pro(向前) + spect(看) → 看向前方 → 展望/前景" },
+      { "word": "perspective", "kk": "/pɝˈspɛktɪv/", "meaning": "觀點",
+        "prefix": "per-", "prefixMeaning": "穿過",
+        "breakdown": "per(穿過) + spect(看) → 看穿事物 → 觀點" },
+      { "word": "respect", "kk": "/rɪˈspɛkt/", "meaning": "尊敬",
+        "prefix": "re-", "prefixMeaning": "再次",
+        "breakdown": "re(再) + spect(看) → 值得再看一眼 → 尊敬" },
+      { "word": "suspect", "kk": "/səˈspɛkt/", "meaning": "懷疑",
+        "prefix": "sus-", "prefixMeaning": "在下面(sub-變體)",
+        "breakdown": "sus(下面) + spect(看) → 偷偷從底下看 → 懷疑" }
     ],
     "dictationHint": "看的角度不同"
   },
   {
     "id": 8,
     "root": "-vis/-vid",
-    "rootMeaning": "看",
+    "rootMeaning": "看（另一種看）",
     "words": [
-      {
-        "word": "visible 可見的",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "revise 修訂",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "supervise 監督",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "visual 視覺的",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "evident 明顯的",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "visible", "kk": "/ˈvɪzəbəl/", "meaning": "可見的",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "vis(看) + ible(能) → 能被看見的 → 可見的" },
+      { "word": "revise", "kk": "/rɪˈvaɪz/", "meaning": "修訂",
+        "prefix": "re-", "prefixMeaning": "再次",
+        "breakdown": "re(再) + vise(看) → 再看一次 → 修訂" },
+      { "word": "supervise", "kk": "/ˈsuːpɝˌvaɪz/", "meaning": "監督",
+        "prefix": "super-", "prefixMeaning": "在上面",
+        "breakdown": "super(上面) + vise(看) → 從上面俯看 → 監督" },
+      { "word": "visual", "kk": "/ˈvɪʒuəl/", "meaning": "視覺的",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "vis(看) + ual(的) → 跟看有關的 → 視覺的" },
+      { "word": "evident", "kk": "/ˈɛvɪdənt/", "meaning": "明顯的",
+        "prefix": "e-", "prefixMeaning": "向外(ex-變體)",
+        "breakdown": "e(向外) + vid(看) → 一看就看出來 → 明顯的" }
     ],
     "dictationHint": "另一種「看」的字根"
   },
   {
     "id": 9,
     "root": "-duc/-duct",
-    "rootMeaning": "引導",
+    "rootMeaning": "引導、帶領",
     "words": [
-      {
-        "word": "produce 生產",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "reduce 減少",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "conduct 執行",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "introduce 介紹",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "deduce 推論",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "produce", "kk": "/prəˈduːs/", "meaning": "生產",
+        "prefix": "pro-", "prefixMeaning": "向前",
+        "breakdown": "pro(向前) + duce(引) → 引導出成果 → 生產" },
+      { "word": "reduce", "kk": "/rɪˈduːs/", "meaning": "減少",
+        "prefix": "re-", "prefixMeaning": "往回",
+        "breakdown": "re(往回) + duce(引) → 往回收縮 → 減少" },
+      { "word": "conduct", "kk": "/kənˈdʌkt/", "meaning": "執行；行為",
+        "prefix": "con-", "prefixMeaning": "一起",
+        "breakdown": "con(一起) + duct(引) → 帶著大家一起做 → 執行" },
+      { "word": "introduce", "kk": "/ˌɪntrəˈduːs/", "meaning": "介紹",
+        "prefix": "intro-", "prefixMeaning": "往裡面",
+        "breakdown": "intro(進入) + duce(引) → 把人引進來 → 介紹" },
+      { "word": "deduce", "kk": "/dɪˈduːs/", "meaning": "推論",
+        "prefix": "de-", "prefixMeaning": "向下",
+        "breakdown": "de(向下) + duce(引) → 從上往下推導 → 推論" }
     ],
     "dictationHint": "引導方向不同"
   },
   {
     "id": 10,
     "root": "-tract",
-    "rootMeaning": "拉",
+    "rootMeaning": "拉、拖拉",
     "words": [
-      {
-        "word": "contract 合約",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "extract 提取",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "attract 吸引",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "distract 分心",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "subtract 減去",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "contract", "kk": "/ˈkɑntrækt/", "meaning": "合約；收縮",
+        "prefix": "con-", "prefixMeaning": "一起",
+        "breakdown": "con(一起) + tract(拉) → 雙方拉在一起 → 合約" },
+      { "word": "extract", "kk": "/ɪkˈstrækt/", "meaning": "提取",
+        "prefix": "ex-", "prefixMeaning": "向外",
+        "breakdown": "ex(向外) + tract(拉) → 往外拉出來 → 提取" },
+      { "word": "attract", "kk": "/əˈtrækt/", "meaning": "吸引",
+        "prefix": "at-", "prefixMeaning": "朝向(ad-變體)",
+        "breakdown": "at(朝向) + tract(拉) → 把人拉過來 → 吸引" },
+      { "word": "distract", "kk": "/dɪˈstrækt/", "meaning": "分心",
+        "prefix": "dis-", "prefixMeaning": "分離",
+        "breakdown": "dis(分離) + tract(拉) → 把注意力拉走 → 分心" },
+      { "word": "subtract", "kk": "/səbˈtrækt/", "meaning": "減去",
+        "prefix": "sub-", "prefixMeaning": "從下面",
+        "breakdown": "sub(下面) + tract(拉) → 從底下抽走 → 減去" }
     ],
     "dictationHint": "拉的方向不同"
   },
   {
     "id": 11,
     "root": "-fin",
-    "rootMeaning": "限結束",
+    "rootMeaning": "限制、結束",
     "words": [
-      {
-        "word": "final 最終的",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "finance 金融",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "define 定義",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "refine 精煉",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "infinite 無限的",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "final", "kk": "/ˈfaɪnəl/", "meaning": "最終的",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "fin(結束) + al(的) → 結束的 → 最終的" },
+      { "word": "finance", "kk": "/fəˈnæns/", "meaning": "金融；資助",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "fin(結束) + ance → 結清帳目 → 金融/財務" },
+      { "word": "define", "kk": "/dɪˈfaɪn/", "meaning": "定義",
+        "prefix": "de-", "prefixMeaning": "完全",
+        "breakdown": "de(完全) + fine(限制) → 完全劃定界限 → 定義" },
+      { "word": "refine", "kk": "/rɪˈfaɪn/", "meaning": "精煉",
+        "prefix": "re-", "prefixMeaning": "再次",
+        "breakdown": "re(再次) + fine(限制/精) → 再精確化 → 精煉" },
+      { "word": "infinite", "kk": "/ˈɪnfɪnɪt/", "meaning": "無限的",
+        "prefix": "in-", "prefixMeaning": "不、否定",
+        "breakdown": "in(不) + finite(有限) → 沒有限制 → 無限的" }
     ],
     "dictationHint": "fin=結束→衍生"
   },
@@ -367,31 +257,21 @@ export const rootWords = [
     "root": "-cred",
     "rootMeaning": "相信",
     "words": [
-      {
-        "word": "credit 信用",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "credential 證書",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "credible 可信的",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "incredible 難以置信",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "accredit 認可",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "credit", "kk": "/ˈkrɛdɪt/", "meaning": "信用；學分",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "cred(相信) + it → 因為相信所以給信用 → 信用" },
+      { "word": "credential", "kk": "/krɪˈdɛnʃəl/", "meaning": "證書；資格",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "cred(相信) + ential → 讓人相信你的文件 → 證書" },
+      { "word": "credible", "kk": "/ˈkrɛdəbəl/", "meaning": "可信的",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "cred(相信) + ible(能) → 能被相信的 → 可信的" },
+      { "word": "incredible", "kk": "/ɪnˈkrɛdəbəl/", "meaning": "難以置信的",
+        "prefix": "in-", "prefixMeaning": "不、否定",
+        "breakdown": "in(不) + credible(可信) → 不可信的 → 難以置信" },
+      { "word": "accredit", "kk": "/əˈkrɛdɪt/", "meaning": "認可",
+        "prefix": "ac-", "prefixMeaning": "朝向",
+        "breakdown": "ac(朝向) + credit(信) → 給予信任 → 認可" }
     ],
     "dictationHint": "信任衍生"
   },
@@ -400,64 +280,44 @@ export const rootWords = [
     "root": "-leg",
     "rootMeaning": "法律",
     "words": [
-      {
-        "word": "legal 合法的",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "legislate 立法",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "legitimate 正當的",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "privilege 特權",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "delegate 委派",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "legal", "kk": "/ˈliːɡəl/", "meaning": "合法的",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "leg(法) + al(的) → 符合法律的 → 合法的" },
+      { "word": "legislate", "kk": "/ˈlɛdʒɪsˌleɪt/", "meaning": "立法",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "legis(法律) + late(提出) → 提出法律 → 立法" },
+      { "word": "legitimate", "kk": "/lɪˈdʒɪtɪmɪt/", "meaning": "正當的；合法的",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "leg(法) + itimate → 合乎法律的 → 正當的" },
+      { "word": "privilege", "kk": "/ˈprɪvəlɪdʒ/", "meaning": "特權",
+        "prefix": "priv-", "prefixMeaning": "個人的",
+        "breakdown": "priv(私人) + leg(法) → 私人的法律 → 特權" },
+      { "word": "delegate", "kk": "/ˈdɛlɪˌɡeɪt/", "meaning": "委派；代表",
+        "prefix": "de-", "prefixMeaning": "離開",
+        "breakdown": "de(離) + leg(法/派) + ate → 把權力派出去 → 委派" }
     ],
     "dictationHint": "法律系列"
   },
   {
     "id": 14,
     "root": "-dict",
-    "rootMeaning": "說",
+    "rootMeaning": "說、宣告",
     "words": [
-      {
-        "word": "predict 預言",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "indicate 指出",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "dedicate 奉獻",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "contradict 矛盾",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "verdict 判決",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "predict", "kk": "/prɪˈdɪkt/", "meaning": "預言",
+        "prefix": "pre-", "prefixMeaning": "在前面",
+        "breakdown": "pre(事前) + dict(說) → 事先說出 → 預言" },
+      { "word": "indicate", "kk": "/ˈɪndɪˌkeɪt/", "meaning": "指出",
+        "prefix": "in-", "prefixMeaning": "朝向",
+        "breakdown": "in(朝向) + dic(說) + ate → 指著說 → 指出" },
+      { "word": "dedicate", "kk": "/ˈdɛdɪˌkeɪt/", "meaning": "奉獻",
+        "prefix": "de-", "prefixMeaning": "完全",
+        "breakdown": "de(完全) + dic(宣告) + ate → 完全宣告投入 → 奉獻" },
+      { "word": "contradict", "kk": "/ˌkɑntrəˈdɪkt/", "meaning": "矛盾",
+        "prefix": "contra-", "prefixMeaning": "相反",
+        "breakdown": "contra(相反) + dict(說) → 說反話 → 矛盾" },
+      { "word": "verdict", "kk": "/ˈvɝdɪkt/", "meaning": "判決",
+        "prefix": "ver-", "prefixMeaning": "真實",
+        "breakdown": "ver(真實) + dict(說) → 說出真相 → 判決" }
     ],
     "dictationHint": "「說」的方向不同"
   },
@@ -466,64 +326,44 @@ export const rootWords = [
     "root": "-ven/-vent",
     "rootMeaning": "來",
     "words": [
-      {
-        "word": "revenue 收入",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "event 事件",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "prevent 阻止",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "convenient 方便的",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "convention 大會",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "revenue", "kk": "/ˈrɛvəˌnjuː/", "meaning": "收入",
+        "prefix": "re-", "prefixMeaning": "回來",
+        "breakdown": "re(回來) + venue(來) → 錢回來了 → 收入" },
+      { "word": "event", "kk": "/ɪˈvɛnt/", "meaning": "事件",
+        "prefix": "e-", "prefixMeaning": "出來",
+        "breakdown": "e(出來) + vent(來) → 冒出來的事 → 事件" },
+      { "word": "prevent", "kk": "/prɪˈvɛnt/", "meaning": "阻止",
+        "prefix": "pre-", "prefixMeaning": "在前面",
+        "breakdown": "pre(事前) + vent(來) → 提前來擋住 → 阻止" },
+      { "word": "convenient", "kk": "/kənˈviːnjənt/", "meaning": "方便的",
+        "prefix": "con-", "prefixMeaning": "一起",
+        "breakdown": "con(一起) + ven(來) → 一起順利來到 → 方便的" },
+      { "word": "convention", "kk": "/kənˈvɛnʃən/", "meaning": "大會；慣例",
+        "prefix": "con-", "prefixMeaning": "一起",
+        "breakdown": "con(一起) + vent(來) → 大家來到一起 → 大會" }
     ],
     "dictationHint": "來/去的方向"
   },
   {
     "id": 16,
     "root": "-pend/-pens",
-    "rootMeaning": "掛花費",
+    "rootMeaning": "掛、花費、稱重",
     "words": [
-      {
-        "word": "depend 依賴",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "expense 費用",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "suspend 暫停",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "compensate 補償",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "independent 獨立的",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "depend", "kk": "/dɪˈpɛnd/", "meaning": "依賴",
+        "prefix": "de-", "prefixMeaning": "向下",
+        "breakdown": "de(向下) + pend(掛) → 掛在別人身上 → 依賴" },
+      { "word": "expense", "kk": "/ɪkˈspɛns/", "meaning": "費用",
+        "prefix": "ex-", "prefixMeaning": "向外",
+        "breakdown": "ex(出去) + pense(花費) → 花出去的錢 → 費用" },
+      { "word": "suspend", "kk": "/səˈspɛnd/", "meaning": "暫停；懸掛",
+        "prefix": "sus-", "prefixMeaning": "在下面",
+        "breakdown": "sus(下面) + pend(掛) → 掛在半空中 → 暫停/懸掛" },
+      { "word": "compensate", "kk": "/ˈkɑmpənˌseɪt/", "meaning": "補償",
+        "prefix": "com-", "prefixMeaning": "一起",
+        "breakdown": "com(一起) + pens(秤) + ate → 放一起秤平衡 → 補償" },
+      { "word": "independent", "kk": "/ˌɪndɪˈpɛndənt/", "meaning": "獨立的",
+        "prefix": "in-", "prefixMeaning": "不",
+        "breakdown": "in(不) + dependent(依賴) → 不依賴的 → 獨立的" }
     ],
     "dictationHint": "掛著→依賴/花費"
   },
@@ -532,64 +372,44 @@ export const rootWords = [
     "root": "-pos/-pon",
     "rootMeaning": "放置",
     "words": [
-      {
-        "word": "propose 提議",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "compose 組成",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "oppose 反對",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "postpone 延期",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "deposit 存款",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "propose", "kk": "/prəˈpoʊz/", "meaning": "提議",
+        "prefix": "pro-", "prefixMeaning": "向前",
+        "breakdown": "pro(向前) + pose(放) → 把想法放到前面 → 提議" },
+      { "word": "compose", "kk": "/kəmˈpoʊz/", "meaning": "組成；作曲",
+        "prefix": "com-", "prefixMeaning": "一起",
+        "breakdown": "com(一起) + pose(放) → 放在一起 → 組成" },
+      { "word": "oppose", "kk": "/əˈpoʊz/", "meaning": "反對",
+        "prefix": "op-", "prefixMeaning": "對面(ob-變體)",
+        "breakdown": "op(對面) + pose(放) → 站在對面 → 反對" },
+      { "word": "postpone", "kk": "/poʊstˈpoʊn/", "meaning": "延期",
+        "prefix": "post-", "prefixMeaning": "在後面",
+        "breakdown": "post(後面) + pone(放) → 放到後面去 → 延期" },
+      { "word": "deposit", "kk": "/dɪˈpɑzɪt/", "meaning": "存款；押金",
+        "prefix": "de-", "prefixMeaning": "向下",
+        "breakdown": "de(下) + posit(放) → 放下來存好 → 存款" }
     ],
     "dictationHint": "放的位置不同"
   },
   {
     "id": 18,
     "root": "-rupt",
-    "rootMeaning": "破",
+    "rootMeaning": "破裂",
     "words": [
-      {
-        "word": "corrupt 腐敗",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "interrupt 打斷",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "disrupt 擾亂",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "bankrupt 破產",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "erupt 爆發",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "corrupt", "kk": "/kəˈrʌpt/", "meaning": "腐敗的",
+        "prefix": "cor-", "prefixMeaning": "完全(con-變體)",
+        "breakdown": "cor(完全) + rupt(破) → 完全破壞 → 腐敗" },
+      { "word": "interrupt", "kk": "/ˌɪntəˈrʌpt/", "meaning": "打斷",
+        "prefix": "inter-", "prefixMeaning": "在中間",
+        "breakdown": "inter(中間) + rupt(破) → 從中間破開 → 打斷" },
+      { "word": "disrupt", "kk": "/dɪsˈrʌpt/", "meaning": "擾亂",
+        "prefix": "dis-", "prefixMeaning": "分離",
+        "breakdown": "dis(分裂) + rupt(破) → 打破使分裂 → 擾亂" },
+      { "word": "bankrupt", "kk": "/ˈbæŋkrʌpt/", "meaning": "破產的",
+        "prefix": "bank-", "prefixMeaning": "銀行",
+        "breakdown": "bank(銀行) + rupt(破) → 銀行破了 → 破產" },
+      { "word": "erupt", "kk": "/ɪˈrʌpt/", "meaning": "爆發",
+        "prefix": "e-", "prefixMeaning": "向外",
+        "breakdown": "e(向外) + rupt(破) → 從裡面破出來 → 爆發" }
     ],
     "dictationHint": "破壞程度不同"
   },
@@ -598,130 +418,90 @@ export const rootWords = [
     "root": "-scrib/-script",
     "rootMeaning": "寫",
     "words": [
-      {
-        "word": "describe 描述",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "subscribe 訂閱",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "prescribe 開處方",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "manuscript 手稿",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "inscription 銘文",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "describe", "kk": "/dɪˈskraɪb/", "meaning": "描述",
+        "prefix": "de-", "prefixMeaning": "向下",
+        "breakdown": "de(向下) + scribe(寫) → 寫下來 → 描述" },
+      { "word": "subscribe", "kk": "/səbˈskraɪb/", "meaning": "訂閱",
+        "prefix": "sub-", "prefixMeaning": "在下面",
+        "breakdown": "sub(下面) + scribe(寫) → 在下面簽名 → 訂閱" },
+      { "word": "prescribe", "kk": "/prɪˈskraɪb/", "meaning": "開處方",
+        "prefix": "pre-", "prefixMeaning": "事先",
+        "breakdown": "pre(事先) + scribe(寫) → 事先寫好指示 → 開處方" },
+      { "word": "manuscript", "kk": "/ˈmænjəˌskrɪpt/", "meaning": "手稿",
+        "prefix": "manu-", "prefixMeaning": "手",
+        "breakdown": "manu(手) + script(寫) → 手寫的東西 → 手稿" },
+      { "word": "inscription", "kk": "/ɪnˈskrɪpʃən/", "meaning": "銘文",
+        "prefix": "in-", "prefixMeaning": "在上面",
+        "breakdown": "in(在上面) + script(寫) → 刻寫在上面 → 銘文" }
     ],
     "dictationHint": "寫的對象不同"
   },
   {
     "id": 20,
     "root": "-serv",
-    "rootMeaning": "保持",
+    "rootMeaning": "保持、服務",
     "words": [
-      {
-        "word": "serve 服務",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "preserve 保存",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "reserve 預訂",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "conserve 保護",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "observe 觀察",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "serve", "kk": "/sɝv/", "meaning": "服務",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "serv(服務) → 直接就是服務" },
+      { "word": "preserve", "kk": "/prɪˈzɝv/", "meaning": "保存",
+        "prefix": "pre-", "prefixMeaning": "事先",
+        "breakdown": "pre(事先) + serve(保持) → 提前保持好 → 保存" },
+      { "word": "reserve", "kk": "/rɪˈzɝv/", "meaning": "預訂；保留",
+        "prefix": "re-", "prefixMeaning": "再次/往回",
+        "breakdown": "re(往回) + serve(保持) → 留回來不用 → 預訂/保留" },
+      { "word": "conserve", "kk": "/kənˈsɝv/", "meaning": "保護；節約",
+        "prefix": "con-", "prefixMeaning": "一起",
+        "breakdown": "con(一起) + serve(保持) → 一起守護 → 保護/節約" },
+      { "word": "observe", "kk": "/əbˈzɝv/", "meaning": "觀察；遵守",
+        "prefix": "ob-", "prefixMeaning": "朝向",
+        "breakdown": "ob(朝向) + serve(看守) → 面對著看 → 觀察" }
     ],
     "dictationHint": "保持/服務衍生"
   },
   {
     "id": 21,
     "root": "-plic/-ply",
-    "rootMeaning": "折疊",
+    "rootMeaning": "折疊、層層疊",
     "words": [
-      {
-        "word": "apply 申請",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "imply 暗示",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "comply 遵守",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "complicate 複雜化",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "explicit 明確的",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "apply", "kk": "/əˈplaɪ/", "meaning": "申請；應用",
+        "prefix": "ap-", "prefixMeaning": "朝向(ad-變體)",
+        "breakdown": "ap(朝向) + ply(折) → 向對方折頁遞出 → 申請" },
+      { "word": "imply", "kk": "/ɪmˈplaɪ/", "meaning": "暗示",
+        "prefix": "im-", "prefixMeaning": "在裡面",
+        "breakdown": "im(裡面) + ply(折) → 折在裡面不說破 → 暗示" },
+      { "word": "comply", "kk": "/kəmˈplaɪ/", "meaning": "遵守",
+        "prefix": "com-", "prefixMeaning": "一起",
+        "breakdown": "com(一起) + ply(折) → 一起折服配合 → 遵守" },
+      { "word": "complicate", "kk": "/ˈkɑmplɪˌkeɪt/", "meaning": "使複雜化",
+        "prefix": "com-", "prefixMeaning": "一起",
+        "breakdown": "com(一起) + plic(折) → 折了又折 → 複雜化" },
+      { "word": "explicit", "kk": "/ɪkˈsplɪsɪt/", "meaning": "明確的",
+        "prefix": "ex-", "prefixMeaning": "向外",
+        "breakdown": "ex(外) + plic(折) → 把折疊的攤開 → 明確的" }
     ],
     "dictationHint": "折疊→層層疊"
   },
   {
     "id": 22,
     "root": "-mand",
-    "rootMeaning": "命令",
+    "rootMeaning": "命令、託付",
     "words": [
-      {
-        "word": "mandate 命令",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "recommend 推薦",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "demand 要求",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "command 指揮",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "mandatory 強制的",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "mandate", "kk": "/ˈmændeɪt/", "meaning": "命令；授權",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "mand(命令) + ate → 直接下命令 → 授權/命令" },
+      { "word": "recommend", "kk": "/ˌrɛkəˈmɛnd/", "meaning": "推薦",
+        "prefix": "re-", "prefixMeaning": "再次",
+        "breakdown": "re(再) + com(一起) + mend(託付) → 再次託付給你 → 推薦" },
+      { "word": "demand", "kk": "/dɪˈmænd/", "meaning": "要求",
+        "prefix": "de-", "prefixMeaning": "完全",
+        "breakdown": "de(完全) + mand(命令) → 完全的命令 → 強烈要求" },
+      { "word": "command", "kk": "/kəˈmænd/", "meaning": "指揮；命令",
+        "prefix": "com-", "prefixMeaning": "一起/加強",
+        "breakdown": "com(加強) + mand(命令) → 加強命令力 → 指揮" },
+      { "word": "mandatory", "kk": "/ˈmændəˌtɔri/", "meaning": "強制的",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "mand(命令) + atory(的) → 命令性的 → 強制的" }
     ],
     "dictationHint": "命令的力度不同"
   },
@@ -730,97 +510,67 @@ export const rootWords = [
     "root": "-nov",
     "rootMeaning": "新",
     "words": [
-      {
-        "word": "innovate 創新",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "novel 新穎的",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "renovate 翻新",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "novelty 新奇",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "novice 新手",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "innovate", "kk": "/ˈɪnəˌveɪt/", "meaning": "創新",
+        "prefix": "in-", "prefixMeaning": "進入",
+        "breakdown": "in(進入) + nov(新) + ate → 引入新東西 → 創新" },
+      { "word": "novel", "kk": "/ˈnɑvəl/", "meaning": "新穎的；小說",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "nov(新) + el → 新的東西 → 新穎的（小說=新的故事）" },
+      { "word": "renovate", "kk": "/ˈrɛnəˌveɪt/", "meaning": "翻新",
+        "prefix": "re-", "prefixMeaning": "再次",
+        "breakdown": "re(再次) + nov(新) + ate → 再次變新 → 翻新" },
+      { "word": "novelty", "kk": "/ˈnɑvəlti/", "meaning": "新奇",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "novel(新) + ty(性質) → 新的性質 → 新奇" },
+      { "word": "novice", "kk": "/ˈnɑvɪs/", "meaning": "新手",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "nov(新) + ice(人) → 新來的人 → 新手" }
     ],
     "dictationHint": "新的衍生"
   },
   {
     "id": 24,
     "root": "-labor",
-    "rootMeaning": "工作",
+    "rootMeaning": "工作、勞動",
     "words": [
-      {
-        "word": "labor 勞動",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "collaborate 合作",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "laboratory 實驗室",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "elaborate 詳述",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "laborious 費力的",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "labor", "kk": "/ˈleɪbɝ/", "meaning": "勞動",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "labor → 直接就是勞動/工作" },
+      { "word": "collaborate", "kk": "/kəˈlæbəˌreɪt/", "meaning": "合作",
+        "prefix": "col-", "prefixMeaning": "一起(con-變體)",
+        "breakdown": "col(一起) + labor(工作) + ate → 一起工作 → 合作" },
+      { "word": "laboratory", "kk": "/ˈlæbrəˌtɔri/", "meaning": "實驗室",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "labor(工作) + atory(場所) → 工作的場所 → 實驗室" },
+      { "word": "elaborate", "kk": "/ɪˈlæbəˌreɪt/", "meaning": "詳述；精心的",
+        "prefix": "e-", "prefixMeaning": "向外",
+        "breakdown": "e(向外) + labor(工作) + ate → 花功夫展開來 → 詳述" },
+      { "word": "laborious", "kk": "/ləˈbɔriəs/", "meaning": "費力的",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "labor(工作) + ious(充滿的) → 充滿勞動的 → 費力的" }
     ],
     "dictationHint": "工作場景"
   },
   {
     "id": 25,
     "root": "-voc/-vok",
-    "rootMeaning": "叫聲",
+    "rootMeaning": "叫、聲音",
     "words": [
-      {
-        "word": "advocate 提倡",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "provoke 激怒",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "revoke 撤銷",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "invoke 援引",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "vocal 有聲的",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "advocate", "kk": "/ˈædvəˌkeɪt/", "meaning": "提倡；擁護者",
+        "prefix": "ad-", "prefixMeaning": "朝向",
+        "breakdown": "ad(朝向) + voc(叫) + ate → 大聲呼籲 → 提倡" },
+      { "word": "provoke", "kk": "/prəˈvoʊk/", "meaning": "激怒",
+        "prefix": "pro-", "prefixMeaning": "向前",
+        "breakdown": "pro(向前) + voke(叫) → 對著人叫囂 → 激怒" },
+      { "word": "revoke", "kk": "/rɪˈvoʊk/", "meaning": "撤銷",
+        "prefix": "re-", "prefixMeaning": "回去",
+        "breakdown": "re(回) + voke(叫) → 把話收回去 → 撤銷" },
+      { "word": "invoke", "kk": "/ɪnˈvoʊk/", "meaning": "援引；調用",
+        "prefix": "in-", "prefixMeaning": "進入",
+        "breakdown": "in(進入) + voke(叫) → 呼叫進來 → 援引/調用" },
+      { "word": "vocal", "kk": "/ˈvoʊkəl/", "meaning": "有聲的；直言的",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "voc(聲音) + al(的) → 有聲音的 → 直言的" }
     ],
     "dictationHint": "叫的方式不同"
   },
@@ -829,64 +579,44 @@ export const rootWords = [
     "root": "-aud",
     "rootMeaning": "聽",
     "words": [
-      {
-        "word": "audit 審計",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "audience 觀眾",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "auditorium 禮堂",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "audible 聽得見",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "audio 音頻",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "audit", "kk": "/ˈɔdɪt/", "meaning": "審計",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "aud(聽) + it → 聽取帳目報告 → 審計" },
+      { "word": "audience", "kk": "/ˈɔdiəns/", "meaning": "觀眾",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "aud(聽) + ience(人群) → 來聽的人 → 觀眾" },
+      { "word": "auditorium", "kk": "/ˌɔdɪˈtɔriəm/", "meaning": "禮堂",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "audit(聽) + orium(場所) → 聽講的地方 → 禮堂" },
+      { "word": "audible", "kk": "/ˈɔdəbəl/", "meaning": "聽得見的",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "aud(聽) + ible(能) → 能被聽見的 → 聽得見的" },
+      { "word": "audio", "kk": "/ˈɔdioʊ/", "meaning": "音頻",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "aud(聽) + io → 跟聽有關的 → 音頻" }
     ],
     "dictationHint": "聽覺系列"
   },
   {
     "id": 27,
     "root": "-greg",
-    "rootMeaning": "群",
+    "rootMeaning": "群、聚集",
     "words": [
-      {
-        "word": "aggregate 總計",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "segregate 隔離",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "congregate 聚集",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "gregarious 好交際的",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "—",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "aggregate", "kk": "/ˈæɡrɪɡɪt/", "meaning": "總計；聚合",
+        "prefix": "ag-", "prefixMeaning": "朝向(ad-變體)",
+        "breakdown": "ag(朝向) + greg(群) + ate → 聚成一群 → 總計" },
+      { "word": "segregate", "kk": "/ˈsɛɡrɪˌɡeɪt/", "meaning": "隔離",
+        "prefix": "se-", "prefixMeaning": "分開",
+        "breakdown": "se(分開) + greg(群) + ate → 從群裡分開 → 隔離" },
+      { "word": "congregate", "kk": "/ˈkɑŋɡrɪˌɡeɪt/", "meaning": "聚集",
+        "prefix": "con-", "prefixMeaning": "一起",
+        "breakdown": "con(一起) + greg(群) + ate → 一起成群 → 聚集" },
+      { "word": "gregarious", "kk": "/ɡrɪˈɡɛriəs/", "meaning": "好交際的",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "greg(群) + arious(傾向的) → 喜歡成群的 → 好交際的" },
+      { "word": "egregious", "kk": "/ɪˈɡriːdʒəs/", "meaning": "極嚴重的",
+        "prefix": "e-", "prefixMeaning": "向外",
+        "breakdown": "e(超出) + greg(群) → 突出群體之外 → 極嚴重的(突出地壞)" }
     ],
     "dictationHint": "群聚/分離"
   },
@@ -895,97 +625,67 @@ export const rootWords = [
     "root": "-count",
     "rootMeaning": "計算",
     "words": [
-      {
-        "word": "account 帳戶",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "accountant 會計",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "discount 折扣",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "recount 重述",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "encounter 遭遇",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "account", "kk": "/əˈkaʊnt/", "meaning": "帳戶；說明",
+        "prefix": "ac-", "prefixMeaning": "朝向",
+        "breakdown": "ac(朝向) + count(計算) → 算給你看 → 帳戶/說明" },
+      { "word": "accountant", "kk": "/əˈkaʊntənt/", "meaning": "會計師",
+        "prefix": "ac-", "prefixMeaning": "朝向",
+        "breakdown": "account(帳戶) + ant(人) → 管帳的人 → 會計師" },
+      { "word": "discount", "kk": "/ˈdɪskaʊnt/", "meaning": "折扣",
+        "prefix": "dis-", "prefixMeaning": "去除",
+        "breakdown": "dis(去除) + count(計算) → 減去一部分 → 折扣" },
+      { "word": "recount", "kk": "/rɪˈkaʊnt/", "meaning": "重述；重新計算",
+        "prefix": "re-", "prefixMeaning": "再次",
+        "breakdown": "re(再) + count(計算/述) → 再算/再說一次 → 重述" },
+      { "word": "encounter", "kk": "/ɪnˈkaʊntɝ/", "meaning": "遭遇",
+        "prefix": "en-", "prefixMeaning": "進入",
+        "breakdown": "en(進入) + counter(對面) → 走到對面碰上 → 遭遇" }
     ],
     "dictationHint": "計算衍生"
   },
   {
     "id": 29,
     "root": "-dur",
-    "rootMeaning": "持續",
+    "rootMeaning": "持續、堅硬",
     "words": [
-      {
-        "word": "durable 耐用的",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "duration 期間",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "endure 忍耐",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "during 在...期間",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "endurance 耐力",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "durable", "kk": "/ˈdʊrəbəl/", "meaning": "耐用的",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "dur(持續) + able(能) → 能持續很久 → 耐用的" },
+      { "word": "duration", "kk": "/dʊˈreɪʃən/", "meaning": "期間",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "dur(持續) + ation(狀態) → 持續的時間 → 期間" },
+      { "word": "endure", "kk": "/ɪnˈdʊr/", "meaning": "忍耐",
+        "prefix": "en-", "prefixMeaning": "使",
+        "breakdown": "en(使) + dure(持續) → 使自己持續撐住 → 忍耐" },
+      { "word": "during", "kk": "/ˈdʊrɪŋ/", "meaning": "在...期間",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "dur(持續) + ing → 持續的時候 → 在...期間" },
+      { "word": "endurance", "kk": "/ɪnˈdʊrəns/", "meaning": "耐力",
+        "prefix": "en-", "prefixMeaning": "使",
+        "breakdown": "endure(忍耐) + ance(性質) → 忍耐的能力 → 耐力" }
     ],
     "dictationHint": "持續多久"
   },
   {
     "id": 30,
     "root": "-gen",
-    "rootMeaning": "產生",
+    "rootMeaning": "產生、種類",
     "words": [
-      {
-        "word": "generate 產生",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "generation 世代",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "generous 慷慨",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "gender 性別",
-        "kk": null,
-        "meaning": null
-      },
-      {
-        "word": "genuine 真正的",
-        "kk": null,
-        "meaning": null
-      }
+      { "word": "generate", "kk": "/ˈdʒɛnəˌreɪt/", "meaning": "產生",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "gen(產生) + erate → 直接產生 → 產生/生成" },
+      { "word": "generation", "kk": "/ˌdʒɛnəˈreɪʃən/", "meaning": "世代",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "generate(產生) + ion → 產生的一批人 → 世代" },
+      { "word": "generous", "kk": "/ˈdʒɛnərəs/", "meaning": "慷慨的",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "gen(產生) + erous(多的) → 產出很多給人 → 慷慨的" },
+      { "word": "gender", "kk": "/ˈdʒɛndɝ/", "meaning": "性別",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "gen(種類) + der → 人的種類區分 → 性別" },
+      { "word": "genuine", "kk": "/ˈdʒɛnjuɪn/", "meaning": "真正的",
+        "prefix": "", "prefixMeaning": "",
+        "breakdown": "gen(產生) + uine → 天生的/原始產出的 → 真正的" }
     ],
     "dictationHint": "產生/種類"
   }
