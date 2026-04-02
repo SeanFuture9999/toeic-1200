@@ -6,6 +6,7 @@ import { renderDaily } from './pages/daily.js';
 import { renderReview } from './pages/review.js';
 import { renderAllWords } from './pages/allWords.js';
 import { renderDictationPage } from './pages/dictationPage.js';
+import { renderDrill } from './pages/drill.js';
 
 // Routes
 addRoute('/', (app) => renderDashboard(app));
@@ -18,6 +19,7 @@ addRoute('/day/:n/method/:m', (app, params) => renderDaily(app, params));
 addRoute('/review', (app) => renderReview(app));
 addRoute('/words', (app) => renderAllWords(app));
 addRoute('/dictation', (app) => renderDictationPage(app));
+addRoute('/drill', (app) => renderDrill(app));
 
 // Init
 initRouter();

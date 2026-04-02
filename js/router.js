@@ -32,8 +32,8 @@ function onHashChange() {
     if (page === 'dashboard' && (hash === '#/' || hash === '')) item.classList.add('active');
     else if (page === 'daily' && hash.startsWith('#/day')) item.classList.add('active');
     else if (page === 'daily' && hash === '#/today') item.classList.add('active');
-    else if (page === 'dictation' && hash.startsWith('#/dictation')) item.classList.add('active');
-    else if (page === 'review' && (hash.startsWith('#/review') || hash.startsWith('#/words'))) item.classList.add('active');
+    else if (page === 'drill' && hash.startsWith('#/drill')) item.classList.add('active');
+    else if (page === 'review' && (hash.startsWith('#/review') || hash.startsWith('#/words') || hash.startsWith('#/dictation'))) item.classList.add('active');
   });
 
   if (result) {
