@@ -7,6 +7,7 @@ import { renderReview } from './pages/review.js';
 import { renderAllWords } from './pages/allWords.js';
 import { renderDictationPage } from './pages/dictationPage.js';
 import { renderDrill } from './pages/drill.js';
+import { renderAwlDrill } from './pages/awlDrill.js';
 
 // Routes
 addRoute('/', (app) => renderDashboard(app));
@@ -20,6 +21,7 @@ addRoute('/review', (app) => renderReview(app));
 addRoute('/words', (app) => renderAllWords(app));
 addRoute('/dictation', (app) => renderDictationPage(app));
 addRoute('/drill', (app) => renderDrill(app));
+addRoute('/awl', (app) => renderAwlDrill(app));
 
 // Init
 initRouter();
